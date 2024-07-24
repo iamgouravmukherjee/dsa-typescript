@@ -31,8 +31,6 @@ export default class SingleLinkedList<L> {
     this.head.next = current;
   }
 
-
-
   append(value: L): void {
     const node = new ListNode(value);
     if (this.head === null) {
@@ -44,5 +42,17 @@ export default class SingleLinkedList<L> {
       current = current.next;
     }
     current.next = node;
+  }
+
+  reverse() {
+    let previous: ListNode<L> | null = null;
+    let current = this.head;
+    while (current) {
+      const next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    this.head = previous;
   }
 }
