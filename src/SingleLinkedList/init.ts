@@ -12,10 +12,12 @@ export default class SingleLinkedList<L> {
 
   traverse(): void {
     let current: ListNode<L> | null = this.head;
+    const listNodes: L[] = [];
     while (current) {
-      console.log(`${current.value} -> `);
+      listNodes.push(current.value);
       current = current.next;
     }
+    console.log(listNodes.join(" -> "));
   }
 
   prepend(value: L): void {
