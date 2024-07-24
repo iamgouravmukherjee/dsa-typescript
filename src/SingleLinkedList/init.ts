@@ -31,6 +31,8 @@ export default class SingleLinkedList<L> {
     this.head.next = current;
   }
 
+
+
   append(value: L): void {
     const node = new ListNode(value);
     if (this.head === null) {

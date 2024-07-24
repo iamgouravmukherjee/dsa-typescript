@@ -5,6 +5,7 @@ const list = new SingleLinkedList();
 // Before appending
 list.traverse();
 
+
 console.log("Appending to the list");
 // Append to the list
 list.append(3);
