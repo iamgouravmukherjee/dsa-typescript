@@ -18,6 +18,17 @@ export default class SingleLinkedList<L> {
     }
   }
 
+  prepend(value: L): void {
+    const node = new ListNode(value);
+    if (this.head === null) {
+      this.head = node;
+      return;
+    }
+    const current = this.head;
+    this.head = node;
+    this.head.next = current;
+  }
+
   append(value: L): void {
     const node = new ListNode(value);
     if (this.head === null) {
